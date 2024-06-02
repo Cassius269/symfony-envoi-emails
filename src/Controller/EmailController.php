@@ -14,6 +14,7 @@ class EmailController extends AbstractController
     #[Route('/email', name: 'emails')]
     public function index(MailerInterface $mailer): Response
     {
+        // Construction de l'objet mail
         $email = new TemplatedEmail();
         $email->from('Service Client<fahamygaston@gmail.com>')
             ->to('fahamygaston@hotmail.com')
@@ -24,9 +25,10 @@ class EmailController extends AbstractController
                 [
                     'username' => 'Fahami'
                 ]
-            );
+            )
+            ->attachFromPath('public/images/image_test.jpg', 'bouton-play.jpg');
 
-        $mailer->send($email);
+        $mailer->send($email); // Envoi du mail
 
         return $this->render('email/index.html.twig', []);
     }

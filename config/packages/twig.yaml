@@ -2,6 +2,7 @@ twig:
   file_name_pattern: "*.twig"
   paths:
     "%kernel.project_dir%/public/css": css #Ajout du chemin vers le dossier "/public/css"
+    "%kernel.project_dir%/public/images": images #Ajout du chemin vers le dossier "/public/images"
 
 when@test:
   twig:
