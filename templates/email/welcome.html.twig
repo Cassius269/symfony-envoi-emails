@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Email de bienvenu</title>
+</head>
+<body>
+	{% apply inline_css(source('@css/welcome-email.css')) %}
+	<h1 class="title">Bienvenu
+		{{username}}
+		sur notre app</h1>
+	<p class="paragraphe">Nous sommes content de vous compter parmi nous</p>
+	{% endapply %}
+</body></html></body>
